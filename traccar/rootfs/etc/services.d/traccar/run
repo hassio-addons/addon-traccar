@@ -22,5 +22,6 @@ options+=(-jar tracker-server.jar)
 options+=(/config/traccar.xml)
 
 # Run the Traccar daemon
-cd /opt/traccar
+cd /opt/traccar || hass.die "Failed to switch to Traccar directory"
+
 exec java "${options[@]}"

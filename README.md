@@ -85,7 +85,7 @@ you are troubleshooting.
 
 ### Option: `port`
 
-The `port` setting allows you to change the port the web interface 
+The `port` setting allows you to change the port the web interface
 Traccar is running on.
 
 ### Option: `ssl`
