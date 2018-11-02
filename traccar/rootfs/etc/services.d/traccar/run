@@ -1,0 +1,26 @@
+#!/usr/bin/with-contenv bash
+# ==============================================================================
+# Community Hass.io Add-ons: Traccar
+# Runs the Traccar daemon
+# ==============================================================================
+# shellcheck disable=SC1091
+source /usr/lib/hassio-addons/base.sh
+
+declare -a options
+
+# Memory settings
+options+=(-Xms256m)
+options+=(-Xmx512m)
+
+# Prefer IPv4, because of Hassio general issues with IPv6
+options+=("-Djava.net.preferIPv4Stack=true")
+
+# Run the JAR
+options+=(-jar tracker-server.jar)
+
+# Configuration file
+options+=(/config/traccar.xml)
+
+# Run the Traccar daemon
+cd /opt/traccar
+exec java "${options[@]}"

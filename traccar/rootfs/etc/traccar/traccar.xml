@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE properties SYSTEM 'http://java.sun.com/dtd/properties.dtd'>
+
+<properties>
+
+    <!--
+    Loads default configuration for the Hass.io add-on.
+    WARNING: Do not remove this line!
+    -->
+    <entry key='config.default'>/etc/traccar/hassio.xml</entry>
+
+    <!--
+    This is the main configuration file. All your configuration parameters should be placed in this file.
+    Parameters in the main config file override values in the default file. Do not
+    remove "config.default" parameter from this file unless you know what you are doing.
+    For list of available parameters see following page:
+        https://www.traccar.org/configuration-file/
+    -->
+
+    <!-- Enter you custom configuration below this line -->
+
+</properties>
