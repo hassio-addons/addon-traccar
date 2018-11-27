@@ -18,9 +18,22 @@
 
 Modern GPS Tracking Platform.
 
+![Traccar in the Home Assistant Frontend](images/screenshot.png)
+
 ## About
 
-Lorem ipsum.
+Traccar is modern GPS Tracking Platform, which is now available as an Hass.io
+add-on and allows you to run your GPS Tracking software without any cloud.
+
+Traccar supports more protocols and device models than any other GPS tracking
+system on the market, straight from your Hass.io instance. You can select GPS
+trackers from a variety of vendors from low-cost Chinese models to high-end
+quality brands.
+
+Traccar also has native mobile apps available for Android and iOS platforms
+so that you can track those as well. AND! With the Home Assistant `traccar`
+component (introduced in 0.83) the data in Traccar will be sent back into
+your Home Assistant instance as well.
 
 ## Installation
 
@@ -56,7 +69,7 @@ Example add-on configuration:
 ```json
 {
   "log_level": "info",
-  "port": 8082,
+  "port": 8072,
   "ssl": true,
   "certfile": "fullchain.pem",
   "keyfile": "privkey.pem"
@@ -104,6 +117,41 @@ The certificate file to use for SSL.
 The private key file to use for SSL.
 
 **Note**: _The file MUST be stored in `/ssl/`, which is the default for Hass.io_
+
+## Integrating into Home Assistant
+
+The `traccar` component of Home Assistant makes it possible to transfer all
+assets tracked by Traccar to appear in Home Assistant as a tracked device.
+
+Add the following snippet to your Home Assistant `configuration.yaml` file.
+
+```yaml
+device_tracker:
+  - platform: traccar
+    host: a0d7b954-traccar
+    port: 8072
+    username: YOUR_USERNAME
+    password: YOUR_PASSWORD
+```
+
+Restart Home Assistant.
+
+## Embedding into Home Assistant
+
+It is possible to embed Traccar directly into Home Assistant, allowing you to
+access your Traccar instance through the Home Assistant frontend.
+
+Home Assistant provides the `panel_iframe` component, for these purposes.
+
+Example configuration:
+
+```yaml
+panel_iframe:
+  traccar:
+    title: Traccar
+    icon: mdi:car-connected
+    url: https://addres.to.your.hass.io:8072
+```
 
 ## Changelog & Releases
 
