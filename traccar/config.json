@@ -4,7 +4,7 @@
   "slug": "traccar",
   "description": "Modern GPS Tracking Platform",
   "url": "https://community.home-assistant.io/?u=frenck",
-  "webui": "[PROTO:ssl]://[HOST]:[PORT:8082]",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8072]",
   "startup": "services",
   "arch": [
     "aarch64",
@@ -23,7 +23,7 @@
   ],
   "options": {
     "log_level": "info",
-    "port": 8082,
+    "port": 8072,
     "ssl": true,
     "certfile": "fullchain.pem",
     "keyfile": "privkey.pem"
