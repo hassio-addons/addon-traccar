@@ -247,7 +247,7 @@ SOFTWARE.
 [discord]: https://discord.me/hassioaddons
 [dockerhub]: https://hub.docker.com/r/hassioaddons/traccar
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[forum]: https://community.home-assistant.io/t/?u=frenck
+[forum]: https://community.home-assistant.io/t/community-hass-io-add-on-traccar/81407?u=frenck
 [frenck]: https://github.com/frenck
 [gitlabci-shield]: https://gitlab.com/hassio-addons/addon-traccar/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/hassio-addons/addon-traccar/pipelines
