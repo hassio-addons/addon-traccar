@@ -25,7 +25,7 @@ RUN \
     \
     && rm -fr /tmp/*
 
-# Build arugments
+# Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_REF
