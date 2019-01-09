@@ -14,7 +14,7 @@ WORKDIR /opt/traccar
 # Setup base
 RUN \
     apk add --no-cache \
-        nginx=1.14.1-r0 \
+        nginx=1.14.2-r0 \
         openjdk8-jre=8.181.13-r0 \
     \
     && curl -J -L -o /tmp/traccar.zip \
