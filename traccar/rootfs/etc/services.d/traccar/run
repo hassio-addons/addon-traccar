@@ -1,12 +1,11 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: Traccar
 # Runs the Traccar daemon
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
 declare -a options
+
+bashio::log.info "Starting Traccar server..."
 
 # Memory settings
 options+=(-Xms256m)
@@ -22,6 +21,6 @@ options+=(-jar tracker-server.jar)
 options+=(/config/traccar.xml)
 
 # Run the Traccar daemon
-cd /opt/traccar || hass.die "Failed to switch to Traccar directory"
+cd /opt/traccar || bashio::exit.nok "Failed to switch to Traccar directory"
 
 exec java "${options[@]}"
