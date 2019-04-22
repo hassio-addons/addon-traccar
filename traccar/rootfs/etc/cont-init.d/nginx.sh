@@ -20,5 +20,5 @@ if bashio::config.true 'ssl'; then
     sed -i "s/%%keyfile%%/${keyfile}/g" /etc/nginx/nginx.conf
 fi
 
-port=$(bashio::config 'port')
+port=$(bashio::addon.port 8072)
 sed -i "s/%%port%%/${port}/g" /etc/nginx/nginx.conf
