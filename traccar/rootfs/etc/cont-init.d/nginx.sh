@@ -7,6 +7,8 @@ declare certfile
 declare keyfile
 declare port
 
+bashio::config.require.ssl
+
 if bashio::config.true 'ssl'; then
     rm /etc/nginx/nginx.conf
     mv /etc/nginx/nginx-ssl.conf /etc/nginx/nginx.conf
