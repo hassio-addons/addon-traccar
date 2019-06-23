@@ -3,6 +3,6 @@
 # Community Hass.io Add-ons: Traccar
 # Runs the Nginx daemon
 # ==============================================================================
-bashio::net.wait_for 18682
+bashio::net.wait_for 18682 localhost 900
 bashio::log.info "Starting NGinx server..."
 exec nginx
