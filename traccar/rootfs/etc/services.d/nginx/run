@@ -5,4 +5,4 @@
 # ==============================================================================
 bashio::net.wait_for 18682
 bashio::log.info "Starting NGinx server..."
-exec nginx -g "daemon off;"
+exec nginx
