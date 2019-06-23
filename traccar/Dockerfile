@@ -14,7 +14,7 @@ WORKDIR /opt/traccar
 # Setup base
 RUN \
     apk add --no-cache \
-        nginx=1.14.2-r0 \
+        nginx=1.16.0-r2 \
         nss=3.41-r0 \
         openjdk8-jre=8.201.08-r1 \
     \
