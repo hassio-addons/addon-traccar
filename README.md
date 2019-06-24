@@ -161,23 +161,6 @@ device_tracker:
 
 Restart Home Assistant.
 
-## Embedding into Home Assistant
-
-It is possible to embed Traccar directly into Home Assistant, allowing you to
-access your Traccar instance through the Home Assistant frontend.
-
-Home Assistant provides the `panel_iframe` component, for these purposes.
-
-Example configuration:
-
-```yaml
-panel_iframe:
-  traccar:
-    title: Traccar
-    icon: mdi:car-connected
-    url: https://addres.to.your.hass.io:8072
-```
-
 ## Changelog & Releases
 
 This repository keeps a change log using [GitHub's releases][releases]
