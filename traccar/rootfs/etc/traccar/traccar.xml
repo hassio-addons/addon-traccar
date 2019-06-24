@@ -17,6 +17,18 @@
         https://www.traccar.org/configuration-file/
     -->
 
+    <!--
+        Remove the comment from the block below to enable MySQL/MariaDB
+        for Traccar. Don't forget to adjust it to your setup.
+        (Usually, just setting the correct USERNAME & PASSWORD).
+    -->
+    <!-- // Remove this line to activate MySQL
+    <entry key='database.driver'>com.mysql.jdbc.Driver</entry>
+    <entry key='database.url'>jdbc:mysql://core-mariadb:3306/traccar?serverTimezone=UTC&amp;useSSL=false&amp;allowMultiQueries=true&amp;autoReconnect=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8&amp;sessionVariables=sql_mode=''</entry>
+    <entry key='database.user'>USERNAME</entry>
+    <entry key='database.password'>PASSWORD</entry>
+    // Remove this line to activate MySQL -->
+
     <!-- Enter you custom configuration below this line -->
 
 </properties>
