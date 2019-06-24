@@ -7,6 +7,7 @@
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]",
   "ingress": true,
   "ingress_port": 0,
+  "panel_icon": "mdi:car-connected",
   "startup": "services",
   "arch": [
     "aarch64",
