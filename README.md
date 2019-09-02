@@ -50,7 +50,7 @@ comparison to installing any other Hass.io add-on.
 1. Start the "Traccar" add-on
 1. Check the logs of the "Traccar" add-on to see if everything went well.
 1. Click the "OPEN WEB UI" button and log in using `admin`/`admin`.
-1. Be sure to change the username and password!
+1. Be sure to change the username, email, and password!
 1. After testing, please consider using MariaDB, since it makes the add-on
    far more stable. Please, consult the add-on manual on how to configure this.
 
@@ -66,7 +66,6 @@ Example add-on configuration:
 ```json
 {
   "log_level": "info",
-  "port": 8072,
   "ssl": true,
   "certfile": "fullchain.pem",
   "keyfile": "privkey.pem"
@@ -92,11 +91,6 @@ Please note that each level automatically includes log messages from a
 more severe level, e.g., `debug` also shows `info` messages. By default,
 the `log_level` is set to `info`, which is the recommended setting unless
 you are troubleshooting.
-
-### Option: `port`
-
-The `port` setting allows you to change the port the web interface
-Traccar is running on.
 
 ### Option: `ssl`
 
@@ -153,10 +147,10 @@ Add the following snippet to your Home Assistant `configuration.yaml` file.
 ```yaml
 device_tracker:
   - platform: traccar
-    host: a0d7b954-traccar
-    port: 8072
-    username: YOUR_USERNAME
-    password: YOUR_PASSWORD
+    host: localhost
+    port: 18682
+    username: TRACCAR_EMAIL_ADDRESS
+    password: TRACCAR_PASSWORD
 ```
 
 Restart Home Assistant.
