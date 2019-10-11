@@ -27,8 +27,9 @@ Modern GPS Tracking Platform.
 
 ## About
 
-Traccar is modern GPS Tracking Platform, which is now available as an Hass.io
-add-on and allows you to run your GPS Tracking software without any cloud.
+[Traccar][traccar] is modern GPS Tracking Platform, which is now available
+as an Hass.io add-on and allows you to run your GPS Tracking software
+without any cloud.
 
 Traccar supports more protocols and device models than any other GPS tracking
 system on the market, straight from your Hass.io instance. You can select GPS
@@ -265,3 +266,4 @@ SOFTWARE.
 [releases]: https://github.com/hassio-addons/addon-traccar/releases
 [repository]: https://github.com/hassio-addons/repository
 [semver]: http://semver.org/spec/v2.0.0.htm
+[traccar]: https://www.traccar.org
