@@ -27,7 +27,7 @@ Modern GPS Tracking Platform.
 
 ## About
 
-[Traccar][traccar] is modern GPS Tracking Platform, which is now available
+[Traccar][traccar] is a modern GPS Tracking Platform, which is now available
 as an Hass.io add-on and allows you to run your GPS Tracking software
 without any cloud.
 
@@ -38,7 +38,7 @@ quality brands.
 
 Traccar also has native mobile apps available for Android and iOS platforms
 so that you can track those as well. AND! With the Home Assistant `traccar`
-component (introduced in 0.83) the data in Traccar will be sent back into
+integration (introduced in 0.83) the data in Traccar will be sent back into
 your Home Assistant instance as well.
 
 ## Installation
@@ -73,7 +73,7 @@ Example add-on configuration:
 }
 ```
 
-**Note**: _This is just an example, don't copy and past it! Create your own!_
+**Note**: _This is just an example, don't copy and paste it! Create your own!_
 
 ### Option: `log_level`
 
@@ -112,7 +112,7 @@ The private key file to use for SSL.
 
 ## Storing data in MySQL/MariaDB
 
-By default, Traccar uses a database that is called H2. It is sweet, since it
+By default, Traccar uses a database that is called H2. It is sweet since it
 works out of the box. However, it is not considered stable for production use,
 so only use it for evaluation and testing purposes.
 
@@ -140,7 +140,7 @@ Don't forget to restart the add-on after making changes.
 
 ## Integrating into Home Assistant
 
-The `traccar` component of Home Assistant makes it possible to transfer all
+The `traccar` integration of Home Assistant makes it possible to transfer all
 assets tracked by Traccar to appear in Home Assistant as a tracked device.
 
 Add the following snippet to your Home Assistant `configuration.yaml` file.
