@@ -46,17 +46,13 @@ your Home Assistant instance as well.
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
-1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install the "Traccar" add-on.
+1. Search for the "Traccar" add-on in the Hass.io add-on store and install it.
 1. Start the "Traccar" add-on
 1. Check the logs of the "Traccar" add-on to see if everything went well.
 1. Click the "OPEN WEB UI" button and log in using `admin`/`admin`.
 1. Be sure to change the username, email, and password!
 1. After testing, please consider using MariaDB, since it makes the add-on
    far more stable. Please, consult the add-on manual on how to configure this.
-
-**NOTE**: Do not add this repository to Hass.io, please use:
-`https://github.com/hassio-addons/repository`.
 
 ## Configuration
 
