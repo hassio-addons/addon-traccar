@@ -16,7 +16,7 @@ RUN \
     apk add --no-cache \
         nginx=1.16.1-r4 \
         nss=3.48-r0 \
-        openjdk8-jre=8.222.10-r0 \
+        openjdk8-jre=8.232.09-r0 \
     \
     && curl -J -L -o /tmp/traccar.zip \
       "https://github.com/traccar/traccar/releases/download/v4.6/traccar-other-4.6.zip" \
