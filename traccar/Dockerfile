@@ -19,7 +19,7 @@ RUN \
         openjdk8-jre=8.232.09-r0 \
     \
     && curl -J -L -o /tmp/traccar.zip \
-      "https://github.com/traccar/traccar/releases/download/v4.6/traccar-other-4.6.zip" \
+      "https://github.com/traccar/traccar/releases/download/v4.7/traccar-other-4.7.zip" \
     \
     && mkdir -p /opt/traccar \
     && unzip -d /opt/traccar /tmp/traccar.zip \
