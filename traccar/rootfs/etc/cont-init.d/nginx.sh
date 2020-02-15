@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: Traccar
+# Home Assistant Community Add-on: Traccar
 # Configures NGINX for use with the Traccar server
 # ==============================================================================
 declare port

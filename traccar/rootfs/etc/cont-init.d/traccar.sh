@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: Traccar
+# Home Assistant Community Add-on: Traccar
 # Ensures the user configuration file is present
 # ==============================================================================
 if ! bashio::fs.file_exists "/config/traccar.xml"; then
