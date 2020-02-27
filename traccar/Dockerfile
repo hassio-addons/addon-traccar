@@ -14,9 +14,11 @@ WORKDIR /opt/traccar
 # Setup base
 RUN \
     apk add --no-cache \
+        mariadb-client=10.4.12-r0 \
         nginx=1.16.1-r6 \
         nss=3.48-r0 \
         openjdk8-jre=8.242.08-r0 \
+        xmlstarlet=1.6.1-r0 \
     \
     && curl -J -L -o /tmp/traccar.zip \
       "https://github.com/traccar/traccar/releases/download/v4.8/traccar-other-4.8.zip" \

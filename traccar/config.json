@@ -21,6 +21,7 @@
     "80/tcp": "Web interface (Not required for Ingress)"
   },
   "map": ["config:rw", "ssl"],
+  "services": ["mysql:want"],
   "options": {
     "ssl": true,
     "certfile": "fullchain.pem",
