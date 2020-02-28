@@ -46,14 +46,13 @@ your Home Assistant instance as well.
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Home Assistant add-on.
 
+1. Ensure you have the official "MariaDB" add-on installed and running!
 1. Search for the "Traccar" add-on in the Supervisor add-on store
    and install it.
 1. Start the "Traccar" add-on
 1. Check the logs of the "Traccar" add-on to see if everything went well.
 1. Click the "OPEN WEB UI" button and log in using `admin`/`admin`.
 1. Be sure to change the username, email, and password!
-1. After testing, please consider using MariaDB, since it makes the add-on
-   far more stable. Please, consult the add-on manual on how to configure this.
 
 ## Configuration
 
@@ -104,34 +103,6 @@ The certificate file to use for SSL.
 The private key file to use for SSL.
 
 **Note**: _The file MUST be stored in `/ssl/`, which is the default_
-
-## Storing data in MySQL/MariaDB
-
-By default, Traccar uses a database that is called H2. It is sweet since it
-works out of the box. However, it is not considered stable for production use,
-so only use it for evaluation and testing purposes.
-
-It is highly recommended to use a MySQL database with this add-on. For example
-you could install the MariaDB add-on that is in the add-on store.
-
-Add the following configuration to your `traccar.xml` that is stored in your
-Home Assistant configuration directory (`/config/traccar.xml`):
-
-```xml
-<entry key='database.driver'>com.mysql.jdbc.Driver</entry>
-<entry key='database.url'>jdbc:mysql://core-mariadb:3306/traccar?serverTimezone=UTC&amp;useSSL=false&amp;allowMultiQueries=true&amp;autoReconnect=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8&amp;sessionVariables=sql_mode=''</entry>
-<entry key='database.user'>USERNAME</entry>
-<entry key='database.password'>PASSWORD</entry>
-```
-
-The above template is already in the config file on newer installations and
-can be simply commented out to be activated.
-
-Don't forget to add the database `traccar` to the MariaDB add-on configuration
-and add the username (with its password) to have access to that database as
-well.
-
-Don't forget to restart the add-on after making changes.
 
 ## Integrating into Home Assistant
 
