@@ -122,6 +122,22 @@ device_tracker:
 
 Restart Home Assistant.
 
+## Enabling more protocols
+
+By default, this add-on has disabled most of the GPS protocols. This has
+been done to reduce the number of open ports the add-on would create.
+
+By default, only the OsmAnd protocol (used by the Traccar Apps) and the API
+are enabled. If you want more protocols, you can do so, by adding entries
+to your `/config/traccar.xml` file.
+
+A list if all entries can be found here:
+
+<https://github.com/hassio-addons/addon-traccar/blob/master/traccar/rootfs/etc/traccar/traccar.xml#L22>
+
+To find out which protocol your device uses, please refer to the Traccar
+website: <https://www.traccar.org/devices/>
+
 ## Changelog & Releases
 
 This repository keeps a change log using [GitHub's releases][releases]
