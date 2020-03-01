@@ -72,4 +72,6 @@
         SELECT * FROM tc_statistics WHERE captureTime BETWEEN :from AND :to ORDER BY captureTime
     </entry>
 
+    <!-- Enable default app port -->
+    <entry key='osmand.port'>5055</entry>
 </properties>
