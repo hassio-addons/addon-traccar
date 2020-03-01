@@ -21,6 +21,6 @@ else
 
         echo "UPDATE DATABASECHANGELOGLOCK SET locked=0;" \
             | mysql -h "${host}" -P "${port}" -u "${username}" -p"${password}" \
-                traccar
+                traccar || true
     fi
 fi
