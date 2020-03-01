@@ -10,6 +10,14 @@ declare port
 declare username
 declare url
 
+if bashio::fs.file_exists "/config/traccar.xml"; then
+  if xmlstarlet sel -t -v "/properties/entry[@key='database.driver']" \
+    "/config/traccar.xml" >/dev/null 2>&1;
+  then
+    exit 0
+  fi
+fi
+
 if bashio::services.available "mysql"; then
   host=$(bashio::services "mysql" "host")
   password=$(bashio::services "mysql" "password")
