@@ -37,17 +37,19 @@ ARG BUILD_VERSION
 # Labels
 LABEL \
     io.hass.name="Traccar" \
-    io.hass.description="Modern GPS Tracking Platform." \
+    io.hass.description="Modern GPS Tracking Platform" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
     maintainer="Franck Nijhof <frenck@addons.community>" \
-    org.label-schema.description="Modern GPS Tracking Platform." \
-    org.label-schema.build-date=${BUILD_DATE} \
-    org.label-schema.name="Traccar" \
-    org.label-schema.schema-version="1.0" \
-    org.label-schema.url="https://community.home-assistant.io/t/home-assistant-community-add-on-traccar/81407?u=frenck" \
-    org.label-schema.usage="https://github.com/hassio-addons/addon-traccar/tree/master/README.md" \
-    org.label-schema.vcs-ref=${BUILD_REF} \
-    org.label-schema.vcs-url="https://github.com/hassio-addons/addon-traccar" \
-    org.label-schema.vendor="Home Assistant Community Add-ons"
+    org.opencontainers.image.title="Traccar" \
+    org.opencontainers.image.description="Modern GPS Tracking Platform" \
+    org.opencontainers.image.vendor="Home Assistant Community Add-ons" \
+    org.opencontainers.image.authors="Franck Nijhof <frenck@addons.community>" \
+    org.opencontainers.image.licenses="MIT" \
+    org.opencontainers.image.url="https://addons.community" \
+    org.opencontainers.image.source="https://github.com/hassio-addons/addon-traccar" \
+    org.opencontainers.image.documentation="https://github.com/hassio-addons/addon-traccar/blob/master/README.md" \
+    org.opencontainers.image.created=${BUILD_DATE} \
+    org.opencontainers.image.revision=${BUILD_REF} \
+    org.opencontainers.image.version=${BUILD_VERSION}
