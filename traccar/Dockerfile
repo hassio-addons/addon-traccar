@@ -17,7 +17,7 @@ RUN \
         mariadb-client=10.4.13-r0 \
         nginx=1.18.0-r0 \
         nss=3.54-r0 \
-        openjdk8-jre=8.242.08-r0 \
+        openjdk8-jre=8.242.08-r2 \
         xmlstarlet=1.6.1-r0 \
     \
     && curl -J -L -o /tmp/traccar.zip \
