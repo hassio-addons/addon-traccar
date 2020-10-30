@@ -15,7 +15,7 @@ WORKDIR /opt/traccar
 RUN \
     apk add --no-cache \
         mariadb-client=10.4.15-r0 \
-        nginx=1.18.0-r0 \
+        nginx=1.18.0-r1 \
         nss=3.55-r0 \
         openjdk8-jre=8.252.09-r0 \
         xmlstarlet=1.6.1-r0 \
