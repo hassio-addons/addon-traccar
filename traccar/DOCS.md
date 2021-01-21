@@ -106,7 +106,7 @@ to your `/config/traccar.xml` file.
 
 A list if all entries can be found here:
 
-<https://github.com/hassio-addons/addon-traccar/blob/master/traccar/rootfs/etc/traccar/traccar.xml#L22>
+<https://github.com/hassio-addons/addon-traccar/blob/main/traccar/rootfs/etc/traccar/traccar.xml#L22>
 
 To find out which protocol your device uses, please refer to the Traccar
 website: <https://www.traccar.org/devices/>
@@ -114,8 +114,7 @@ website: <https://www.traccar.org/devices/>
 ## Changelog & Releases
 
 This repository keeps a change log using [GitHub's releases][releases]
-functionality. The format of the log is based on
-[Keep a Changelog][keepchangelog].
+functionality.
 
 Releases are based on [Semantic Versioning][semver], and use the format
 of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
@@ -177,7 +176,6 @@ SOFTWARE.
 [forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-traccar/81407?u=frenck
 [frenck]: https://github.com/frenck
 [issue]: https://github.com/hassio-addons/addon-traccar/issues
-[keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [reddit]: https://reddit.com/r/homeassistant
 [releases]: https://github.com/hassio-addons/addon-traccar/releases
 [semver]: http://semver.org/spec/v2.0.0.htm
