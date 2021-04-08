@@ -28,11 +28,11 @@ Modern GPS Tracking Platform.
 ## About
 
 [Traccar][traccar] is a modern GPS Tracking Platform, which is now available
-as an Hass.io add-on and allows you to run your GPS Tracking software
+as a Home Assistant add-on and allows you to run your GPS Tracking software
 without any cloud.
 
 Traccar supports more protocols and device models than any other GPS tracking
-system on the market, straight from your Hass.io instance. You can select GPS
+system on the market, straight from your Home Assistant instance. You can select GPS
 trackers from a variety of vendors from low-cost Chinese models to high-end
 quality brands.
 
