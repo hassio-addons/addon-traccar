@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.1.7
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.2.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -16,7 +16,7 @@ RUN \
     apk add --no-cache \
         mariadb-client=10.5.8-r0 \
         nginx=1.18.0-r13 \
-        nss=3.63-r0 \
+        nss=3.63-r1 \
         openjdk8-jre=8.275.01-r0 \
         xmlstarlet=1.6.1-r0 \
     \
