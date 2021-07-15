@@ -30,7 +30,7 @@ if bashio::services.available "mysql"; then
 
   # Update Traccar XML configuration for database
   xmlstarlet ed -L -s /properties \
-    -t elem -n entry_placeholder -v "com.mysql.jdbc.Driver" \
+    -t elem -n entry_placeholder -v "com.mysql.cj.jdbc.Driver" \
       -i //entry_placeholder -t attr -n "key" -v "database.driver" \
     -r //entry_placeholder -v entry \
     "${CONFIG}"
