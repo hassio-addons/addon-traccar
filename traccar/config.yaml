@@ -6,7 +6,6 @@ description: Modern GPS Tracking Platform
 url: https://github.com/hassio-addons/addon-traccar
 ingress: true
 ingress_port: 0
-ingress_stream: true
 panel_icon: mdi:car-connected
 startup: services
 arch:
