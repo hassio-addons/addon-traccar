@@ -4,6 +4,7 @@ version: dev
 slug: traccar
 description: Modern GPS Tracking Platform
 url: https://github.com/hassio-addons/addon-traccar
+codenotary: codenotary@frenck.dev
 ingress: true
 ingress_port: 0
 panel_icon: mdi:car-connected
