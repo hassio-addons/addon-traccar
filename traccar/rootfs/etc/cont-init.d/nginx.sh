@@ -4,14 +4,6 @@
 # Configures NGINX for use with the Traccar server
 # ==============================================================================
 
-# Generate Ingress configuration
-bashio::var.json \
-    interface "$(bashio::addon.ip_address)" \
-    port "$(bashio::addon.ingress_port)" \
-    | tempio \
-        -template /etc/nginx/templates/ingress.gtpl \
-        -out /etc/nginx/servers/ingress.conf
-
 # Generate direct access configuration, if enabled.
 if bashio::var.has_value "$(bashio::addon.port 80)"; then
     bashio::config.require.ssl
