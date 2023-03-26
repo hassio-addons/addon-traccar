@@ -29,8 +29,7 @@ comparison to installing any other Home Assistant add-on.
 1. Click the "Install" button to install the add-on.
 1. Start the "Traccar" add-on
 1. Check the logs of the "Traccar" add-on to see if everything went well.
-1. Click the "OPEN WEB UI" button and log in using `admin`/`admin`.
-1. Be sure to change the username, email, and password!
+1. Click the "OPEN WEB UI" button.
 
 ## Configuration
 
