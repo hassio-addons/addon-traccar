@@ -31,7 +31,8 @@
         "ARG TRACCAR_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
       ],
       "datasourceTemplate": "github-releases",
-      "depNameTemplate": "traccar/traccar"
+      "depNameTemplate": "traccar/traccar",
+      "versioningTemplate": "semver-coerced"
     }
   ],
   "packageRules": [
