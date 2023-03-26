@@ -6,9 +6,10 @@
 
     <entry key='web.enable'>true</entry>
     <entry key='web.port'>18682</entry>
-    <entry key='web.path'>./web</entry>
+    <entry key='web.path'>./modern</entry>
     <entry key='web.address'>127.0.0.1</entry>
     <entry key='web.cacheControl'>max-age=3600,public</entry>
+    <entry key='web.persistSession'>false</entry>
 
     <entry key='geocoder.enable'>false</entry>
     <entry key='geocoder.type'>google</entry>
