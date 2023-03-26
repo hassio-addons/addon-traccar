@@ -12,6 +12,7 @@ COPY rootfs /
 WORKDIR /opt/traccar
 
 # Setup base
+ARG TRACCAR_VERSION="v5.0"
 RUN \
     apk add --no-cache \
         mariadb-client=10.6.9-r0 \
@@ -21,7 +22,7 @@ RUN \
         xmlstarlet=1.6.1-r0 \
     \
     && curl -J -L -o /tmp/traccar.zip \
-      "https://github.com/traccar/traccar/releases/download/v5.0/traccar-other-5.0.zip" \
+      "https://github.com/traccar/traccar/releases/download/${TRACCAR_VERSION}/traccar-other-${TRACCAR_VERSION#v}.zip" \
     \
     && mkdir -p /opt/traccar \
     && unzip -d /opt/traccar /tmp/traccar.zip \
