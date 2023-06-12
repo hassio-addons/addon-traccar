@@ -15,7 +15,7 @@ WORKDIR /opt/traccar
 ARG TRACCAR_VERSION="v5.7"
 RUN \
     apk add --no-cache \
-        mariadb-client=10.11.3-r0 \
+        mariadb-client=10.11.4-r0 \
         nginx=1.24.0-r6 \
         nss=3.89.1-r0 \
         openjdk11-jre-headless=11.0.19_p7-r1 \
