@@ -17,7 +17,7 @@ RUN \
     apk add --no-cache \
         mariadb-client=10.11.5-r0 \
         nginx=1.24.0-r7 \
-        nss=3.91-r0 \
+        nss=3.94-r0 \
         openjdk11-jre-headless=11.0.21_p9-r0 \
         xmlstarlet=1.6.1-r2 \
     \
