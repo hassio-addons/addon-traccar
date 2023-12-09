@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:14.3.3
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:15.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -15,8 +15,8 @@ WORKDIR /opt/traccar
 ARG TRACCAR_VERSION="v5.10"
 RUN \
     apk add --no-cache \
-        mariadb-client=10.11.5-r0 \
-        nginx=1.24.0-r7 \
+        mariadb-client=10.11.5-r3 \
+        nginx=1.24.0-r14 \
         nss=3.94-r0 \
         openjdk11-jre-headless=11.0.21_p9-r0 \
         xmlstarlet=1.6.1-r2 \
