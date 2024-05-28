@@ -16,7 +16,7 @@ ARG TRACCAR_VERSION="v6.1"
 RUN \
     apk add --no-cache \
         mariadb-client=10.11.8-r0 \
-        nginx=1.26.0-r1 \
+        nginx=1.26.0-r2 \
         nss=3.100-r0 \
         openjdk11-jre-headless=11.0.23_p9-r0 \
         xmlstarlet=1.6.1-r2 \
