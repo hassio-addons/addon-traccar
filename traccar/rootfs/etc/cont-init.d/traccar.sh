@@ -28,7 +28,7 @@ else
         username=$(bashio::services "mysql" "username")
 
         echo "UPDATE DATABASECHANGELOGLOCK SET locked=0;" \
-            | mysql -h "${host}" -P "${port}" -u "${username}" -p"${password}" \
+            | mysql --skip-ssl -h "${host}" -P "${port}" -u "${username}" -p"${password}" \
                 traccar || true
     fi
 fi

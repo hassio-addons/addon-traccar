@@ -26,7 +26,7 @@ if bashio::services.available "mysql"; then
 
   # Create database if not exists
   echo "CREATE DATABASE IF NOT EXISTS traccar;" \
-    | mysql -h "${host}" -P "${port}" -u "${username}" -p"${password}"
+    | mysql --skip-ssl -h "${host}" -P "${port}" -u "${username}" -p"${password}"
 
   # Update Traccar XML configuration for database
   xmlstarlet ed -L -s /properties \
