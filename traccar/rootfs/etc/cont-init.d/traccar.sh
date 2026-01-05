@@ -18,7 +18,8 @@ fi
 
 # Create a backup of the current Traccar configuration,
 # and copy a clean one in place
-if ! bashio::fs.file_exists '/config/traccar.v5.12.xml'; then
+if ! bashio::fs.file_exists '/config/traccar.v5.12.xml' \
+    && bashio::fs.file_exists '/config/traccar.xml'; then
   mv /config/traccar.xml /config/traccar.v5.12.xml \
       || bashio::exit.nok "Failed to backup Traccar configuration"
   cp /etc/traccar/traccar.xml /config/traccar.xml \
