@@ -4,20 +4,34 @@
 <properties>
 
     <!--
-    Loads default configuration for the Hass.io add-on.
-    WARNING: Do not remove this line!
+    Default configuration for the Hass.io add-on.
+    WARNING: Do not remove!
     -->
-    <entry key='config.default'>/etc/traccar/hassio.xml</entry>
+    <entry key='web.address'>127.0.0.1</entry>
+    <entry key='web.port'>18682</entry>
+    <entry key='web.persistSession'>false</entry>
+
+    <entry key='geocoder.enable'>false</entry>
+
+    <entry key='logger.file'>/dev/stdout</entry>
+
+    <entry key='notificator.types'>web,mail</entry>
+
+    <entry key='database.driver'>org.h2.Driver</entry>
+    <entry key='database.url'>jdbc:h2:/data/traccar</entry>
+    <entry key='database.user'>sa</entry>
+    <entry key='database.password'></entry>
 
     <!--
     This is the main configuration file. All your configuration parameters should be placed in this file.
-    Parameters in the main config file override values in the default file. Do not
-    remove "config.default" parameter from this file unless you know what you are doing.
-    For list of available parameters see following page:
+    For a list of available parameters see following page:
         https://www.traccar.org/configuration-file/
     -->
 
     <!-- Enter you custom configuration below this line -->
+
+    <!-- Enabled app ports -->
+    <entry key='osmand.port'>5055</entry>
 
     <!-- // Example ports/protocols you can activate
     <entry key='gps103.port'>5001</entry>
@@ -203,5 +217,4 @@
     <entry key='xrb28.port'>5180</entry>
     <entry key='c2stek.port'>5181</entry>
     -->
-
 </properties>
