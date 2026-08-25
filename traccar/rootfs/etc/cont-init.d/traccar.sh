@@ -3,7 +3,7 @@
 # Home Assistant Community App: Traccar
 # Ensures the user configuration file is present and builds the runtime config
 # ==============================================================================
-readonly DEFAULTS="/etc/traccar/hassio.xml"
+readonly DEFAULTS="/etc/traccar/defaults.xml"
 readonly USER_CONFIG="/config/traccar.xml"
 readonly RUNTIME_CONFIG="/var/run/traccar/traccar.xml"
 declare host

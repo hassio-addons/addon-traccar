@@ -3,7 +3,7 @@
 # Home Assistant Community App: Traccar
 # Pre-configures the MySQL clients, if the service is available
 # ==============================================================================
-readonly CONFIG="/etc/traccar/hassio.xml"
+readonly CONFIG="/etc/traccar/defaults.xml"
 declare host
 declare password
 declare port
