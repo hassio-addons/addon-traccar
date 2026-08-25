@@ -1,4 +1,4 @@
-# Home Assistant Community Add-on: Traccar
+# Home Assistant Community App: Traccar
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -19,7 +19,7 @@ Modern GPS Tracking Platform.
 ## About
 
 [Traccar][traccar] is a modern GPS Tracking Platform, which is now available
-as a Home Assistant add-on and allows you to run your GPS Tracking software
+as a Home Assistant app and allows you to run your GPS Tracking software
 without any cloud.
 
 Traccar supports more protocols and device models than any other GPS tracking
@@ -32,7 +32,7 @@ so that you can track those as well. AND! With the Home Assistant `traccar`
 integration (introduced in 0.83) the data in Traccar will be sent back into
 your Home Assistant instance as well.
 
-[:books: Read the full add-on documentation][docs]
+[:books: Read the full app documentation][docs]
 
 ## Support
 
@@ -40,7 +40,7 @@ Got questions?
 
 You have several options to get them answered:
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
+- The [Home Assistant Community Apps Discord chat server][discord] for app
   support and feature requests.
 - The [Home Assistant Discord chat server][discord-ha] for general Home
   Assistant discussions and questions.
@@ -66,11 +66,11 @@ The original setup of this repository is by [Franck Nijhof][frenck].
 For a full list of all authors and contributors,
 check [the contributor's page][contributors].
 
-## We have got some Home Assistant add-ons for you
+## We have got some Home Assistant apps for you
 
 Want some more functionality to your Home Assistant instance?
 
-We have created multiple add-ons for Home Assistant. For a full list, check out
+We have created multiple apps for Home Assistant. For a full list, check out
 our [GitHub Repository][repository].
 
 ## License
@@ -97,26 +97,26 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-traccar.svg
-[commits]: https://github.com/hassio-addons/addon-traccar/commits/main
-[contributors]: https://github.com/hassio-addons/addon-traccar/graphs/contributors
+[commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/app-traccar.svg
+[commits]: https://github.com/hassio-addons/app-traccar/commits/main
+[contributors]: https://github.com/hassio-addons/app-traccar/graphs/contributors
 [discord-ha]: https://discord.gg/c5DvZ4e
 [discord]: https://discord.me/hassioaddons
-[docs]: https://github.com/hassio-addons/addon-traccar/blob/main/traccar/DOCS.md
+[docs]: https://github.com/hassio-addons/app-traccar/blob/main/traccar/DOCS.md
 [forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-traccar/81407?u=frenck
 [frenck]: https://github.com/frenck
-[github-actions-shield]: https://github.com/hassio-addons/addon-traccar/workflows/CI/badge.svg
-[github-actions]: https://github.com/hassio-addons/addon-traccar/actions
+[github-actions-shield]: https://github.com/hassio-addons/app-traccar/workflows/CI/badge.svg
+[github-actions]: https://github.com/hassio-addons/app-traccar/actions
 [github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
 [github-sponsors]: https://github.com/sponsors/frenck
-[issue]: https://github.com/hassio-addons/addon-traccar/issues
-[license-shield]: https://img.shields.io/github/license/hassio-addons/addon-traccar.svg
+[issue]: https://github.com/hassio-addons/app-traccar/issues
+[license-shield]: https://img.shields.io/github/license/hassio-addons/app-traccar.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2026.svg
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
 [reddit]: https://reddit.com/r/homeassistant
-[releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-traccar.svg
-[releases]: https://github.com/hassio-addons/addon-traccar/releases
+[releases-shield]: https://img.shields.io/github/release/hassio-addons/app-traccar.svg
+[releases]: https://github.com/hassio-addons/app-traccar/releases
 [repository]: https://github.com/hassio-addons/repository
 [traccar]: https://www.traccar.org

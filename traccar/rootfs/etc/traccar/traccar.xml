@@ -4,7 +4,7 @@
 <properties>
 
     <!--
-    Loads default configuration for the Hass.io add-on.
+    Loads default configuration for the Home Assistant app.
     WARNING: Do not remove this line!
     -->
     <entry key='config.default'>/etc/traccar/hassio.xml</entry>

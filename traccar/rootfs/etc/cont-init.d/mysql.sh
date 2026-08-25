@@ -1,6 +1,6 @@
 #!/command/with-contenv bashio
 # ==============================================================================
-# Home Assistant Community Add-on: Traccar
+# Home Assistant Community App: Traccar
 # Pre-configures the MySQL clients, if the service is available
 # ==============================================================================
 readonly CONFIG="/etc/traccar/hassio.xml"
@@ -56,6 +56,6 @@ if bashio::services.available "mysql"; then
 else
   bashio::log.warning "Traccar is using the internal H2 default database!"
   bashio::log.warning "THIS IS NOT RECOMMENDED!!!"
-  bashio::log.warning "Please install the official MariaDB add-on, to ensure"
+  bashio::log.warning "Please install the official MariaDB app, to ensure"
   bashio::log.warning "you are using a solid database for Traccar."
 fi
