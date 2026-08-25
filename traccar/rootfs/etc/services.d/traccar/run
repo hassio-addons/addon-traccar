@@ -18,7 +18,7 @@ options+=("-Djava.net.preferIPv4Stack=true")
 options+=(-jar tracker-server.jar)
 
 # Configuration file
-options+=(/config/traccar.xml)
+options+=(/var/run/traccar/traccar.xml)
 
 # Run the Traccar daemon
 cd /opt/traccar || bashio::exit.nok "Failed to switch to Traccar directory"
