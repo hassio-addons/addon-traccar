@@ -1,10 +1,10 @@
 #!/command/with-contenv bashio
 # ==============================================================================
-# Home Assistant Community Add-on: Traccar
+# Home Assistant Community App: Traccar
 # Take down the S6 supervision tree when the Traccar daemon fails
 # ==============================================================================
 if [[ "${1}" -ne 0 ]] && [[ "${1}" -ne 256 ]]; then
-  bashio::log.warning "Traccar crashed, halting add-on"
+  bashio::log.warning "Traccar crashed, halting app"
   /run/s6/basedir/bin/halt
 fi
 
