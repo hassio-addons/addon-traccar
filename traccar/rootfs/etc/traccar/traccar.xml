@@ -4,16 +4,12 @@
 <properties>
 
     <!--
-    Loads default configuration for the Home Assistant app.
-    WARNING: Do not remove this line!
-    -->
-    <entry key='config.default'>/etc/traccar/hassio.xml</entry>
+    This is your own configuration file. Everything you put in here is merged
+    on top of the defaults the app ships with, so any parameter you set here
+    overrides the app default for it.
 
-    <!--
-    This is the main configuration file. All your configuration parameters should be placed in this file.
-    Parameters in the main config file override values in the default file. Do not
-    remove "config.default" parameter from this file unless you know what you are doing.
-    For list of available parameters see following page:
+    You only need to list the parameters you actually want to change.
+    For the list of available parameters see the following page:
         https://www.traccar.org/configuration-file/
     -->
 

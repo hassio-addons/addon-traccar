@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE properties SYSTEM 'http://java.sun.com/dtd/properties.dtd'>
+
+<!--
+    App managed defaults for Traccar.
+
+    This file is owned by the app and is overwritten on every update.
+    Do not edit it; put your own settings in the traccar.xml file in the
+    app configuration folder instead. Those settings are merged on top of
+    this file on every start, so they always win.
+-->
+
+<properties>
+
+    <entry key='web.port'>18682</entry>
+    <entry key='web.path'>/opt/traccar/web</entry>
+    <entry key='web.address'>127.0.0.1</entry>
+    <entry key='web.cacheControl'>max-age=3600,public</entry>
+    <entry key='web.persistSession'>false</entry>
+
+    <entry key='geocoder.enable'>false</entry>
+    <entry key='geocoder.type'>google</entry>
+
+    <entry key='logger.level'>info</entry>
+    <entry key='logger.file'>/dev/stdout</entry>
+
+    <entry key='filter.enable'>true</entry>
+    <entry key='filter.future'>86400</entry>
+
+    <entry key='event.ignoreDuplicateAlerts'>true</entry>
+
+    <entry key='media.path'>/opt/traccar/media</entry>
+
+    <entry key='notificator.types'>web,mail</entry>
+
+    <entry key='database.changelog'>/opt/traccar/schema/changelog-master.xml</entry>
+    <entry key='database.driver'>org.h2.Driver</entry>
+    <entry key='database.url'>jdbc:h2:/data/traccar</entry>
+    <entry key='database.user'>sa</entry>
+    <entry key='database.password'></entry>
+
+    <!-- Enable default app port -->
+    <entry key='osmand.port'>5055</entry>
+
+</properties>

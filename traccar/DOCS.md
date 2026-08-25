@@ -99,6 +99,21 @@ device_tracker:
 
 Restart Home Assistant.
 
+## Traccar configuration file
+
+Besides the app options above, Traccar itself is configured through a
+`traccar.xml` file in the app configuration folder. The app ships a set of
+defaults, and everything in your `traccar.xml` is merged on top of those on
+every start, so any parameter you set there overrides the app default.
+
+You only need to list the parameters you actually want to change. The full
+list of available parameters is documented on the
+[Traccar configuration page](https://www.traccar.org/configuration-file/).
+
+**Note**: _Older versions of this app required a `config.default` entry at the
+top of that file. Traccar removed support for it in 6.2, so it is no longer
+needed. If your file still has it, the app ignores it and you can remove it._
+
 ## Enabling more protocols
 
 By default, this app has disabled most of the GPS protocols. This has
@@ -110,7 +125,7 @@ to your `traccar.xml` file in the app configuration folder.
 
 A list if all entries can be found here:
 
-<https://github.com/hassio-addons/app-traccar/blob/main/traccar/rootfs/etc/traccar/traccar.xml#L22>
+<https://github.com/hassio-addons/app-traccar/blob/main/traccar/rootfs/etc/traccar/traccar.xml#L18>
 
 To find out which protocol your device uses, please refer to the Traccar
 website: <https://www.traccar.org/devices/>
