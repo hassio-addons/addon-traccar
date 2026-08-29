@@ -4,58 +4,95 @@
 # Pre-configures the MySQL clients, if the service is available
 # ==============================================================================
 readonly CONFIG="/etc/traccar/defaults.xml"
+readonly USER_CONFIG="/config/traccar.xml"
+
+# Marks this installation as running on MySQL, so a database service that is
+# temporarily unavailable is never mistaken for a brand new installation.
+readonly MARKER="/data/.mysql"
+
 declare host
 declare password
 declare port
 declare username
 declare url
 
-if bashio::fs.file_exists "/config/traccar.xml"; then
-  if xmlstarlet sel -t -v "/properties/entry[@key='database.driver']" \
-    "/config/traccar.xml" >/dev/null 2>&1;
-  then
+# When the user points Traccar at a database of their own, the app stays out
+# of the way completely.
+if xmlstarlet sel -Q -t -c "/properties/entry[@key='database.driver']" \
+    "${USER_CONFIG}" 2>/dev/null;
+then
     exit 0
-  fi
 fi
 
-if bashio::services.available "mysql"; then
-  host=$(bashio::services "mysql" "host")
-  password=$(bashio::services "mysql" "password")
-  port=$(bashio::services "mysql" "port")
-  username=$(bashio::services "mysql" "username")
-
-  # Create database if not exists
-  echo "CREATE DATABASE IF NOT EXISTS traccar;" \
-    | mysql --skip-ssl -h "${host}" -P "${port}" -u "${username}" -p"${password}"
-
-  # Update Traccar XML configuration for database
-  xmlstarlet ed -L -s /properties \
-    -t elem -n entry_placeholder -v "com.mysql.cj.jdbc.Driver" \
-      -i //entry_placeholder -t attr -n "key" -v "database.driver" \
-    -r //entry_placeholder -v entry \
-    "${CONFIG}"
-
-  url="jdbc:mysql://${host}:${port}/traccar?serverTimezone=UTC&amp;useSSL=false&amp;allowMultiQueries=true&amp;autoReconnect=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8&amp;sessionVariables=sql_mode=''"
-  xmlstarlet ed -L -s /properties \
-    -t elem -n entry_placeholder -v "${url}" \
-      -i //entry_placeholder -t attr -n "key" -v "database.url" \
-    -r //entry_placeholder -v entry \
-    "${CONFIG}"
-
-  xmlstarlet ed -L -s /properties \
-    -t elem -n entry_placeholder -v "${username}" \
-      -i //entry_placeholder -t attr -n "key" -v "database.user" \
-    -r //entry_placeholder -v entry \
-    "${CONFIG}"
-
-  xmlstarlet ed -L -s /properties \
-    -t elem -n entry_placeholder -v "${password}" \
-      -i //entry_placeholder -t attr -n "key" -v "database.password" \
-    -r //entry_placeholder -v entry \
-    "${CONFIG}"
-else
-  bashio::log.warning "Traccar is using the internal H2 default database!"
-  bashio::log.warning "THIS IS NOT RECOMMENDED!!!"
-  bashio::log.warning "Please install the official MariaDB app, to ensure"
-  bashio::log.warning "you are using a solid database for Traccar."
+# The database app can still be starting up, in which case the service shows
+# up a little later. Silently continuing on the internal H2 database would
+# make this installation look completely empty, so wait for it instead.
+if bashio::fs.file_exists "${MARKER}" \
+    && ! bashio::services.available "mysql"; then
+    bashio::log.notice \
+        "The MySQL service is not available yet, waiting up to 5 minutes..."
+    for _ in {1..60}; do
+        sleep 5
+        if bashio::services.available "mysql"; then
+            bashio::log.info "The MySQL service is available now, continuing"
+            break
+        fi
+    done
 fi
+
+if ! bashio::services.available "mysql"; then
+
+    # This installation has run on MySQL before. Starting on the empty H2
+    # database would look exactly like all data has been lost, so don't.
+    if bashio::fs.file_exists "${MARKER}"; then
+        bashio::log.fatal
+        bashio::log.fatal "The MySQL service is not available!"
+        bashio::log.fatal
+        bashio::log.fatal "Traccar stores its data in MySQL on this system,"
+        bashio::log.fatal "but the database service is currently unavailable."
+        bashio::log.fatal "Starting now would bring up an empty database, as"
+        bashio::log.fatal "if all your users, devices and history were gone."
+        bashio::log.fatal
+        bashio::log.fatal "Your data is untouched. Please start the official"
+        bashio::log.fatal "MariaDB app and restart this app afterwards."
+        bashio::log.fatal
+        bashio::exit.nok
+    fi
+
+    bashio::log.warning "Traccar is using the internal H2 default database!"
+    bashio::log.warning "THIS IS NOT RECOMMENDED!!!"
+    bashio::log.warning "Please install the official MariaDB app, to ensure"
+    bashio::log.warning "you are using a solid database for Traccar."
+    exit 0
+fi
+
+host=$(bashio::services "mysql" "host")
+password=$(bashio::services "mysql" "password")
+port=$(bashio::services "mysql" "port")
+username=$(bashio::services "mysql" "username")
+
+# Create database if not exists
+echo "CREATE DATABASE IF NOT EXISTS traccar;" \
+  | mysql --skip-ssl -h "${host}" -P "${port}" -u "${username}" -p"${password}"
+
+# Traccar can leave its schema migration locked when it is stopped halfway
+# through one, which blocks every start after that. On a database this app
+# does not manage itself, clearing that lock is up to the user.
+echo "UPDATE DATABASECHANGELOGLOCK SET locked=0;" \
+  | mysql --skip-ssl -h "${host}" -P "${port}" -u "${username}" -p"${password}" \
+      traccar 2>/dev/null || true
+
+# Update Traccar XML configuration for database. All four keys are shipped
+# in the defaults, so they are updated in place; inserting new elements makes
+# xmlstarlet parse the value as XML, which eats a "&" in, for example, a
+# password. Updating an existing element escapes the value instead.
+url="jdbc:mysql://${host}:${port}/traccar?serverTimezone=UTC&useSSL=false&allowMultiQueries=true&autoReconnect=true&useUnicode=yes&characterEncoding=UTF-8&sessionVariables=sql_mode=''"
+
+xmlstarlet ed -L \
+  -u "/properties/entry[@key='database.driver']" -v "com.mysql.cj.jdbc.Driver" \
+  -u "/properties/entry[@key='database.url']" -v "${url}" \
+  -u "/properties/entry[@key='database.user']" -v "${username}" \
+  -u "/properties/entry[@key='database.password']" -v "${password}" \
+  "${CONFIG}"
+
+touch "${MARKER}"
