@@ -8,23 +8,6 @@ readonly MERGE="/etc/traccar/merge.xslt"
 readonly RUNTIME_CONFIG="/var/run/traccar/traccar.xml"
 readonly USER_CONFIG="/config/traccar.xml"
 declare error
-declare host
-declare password
-declare port
-declare username
-
-if bashio::services.available "mysql"; then
-    # Traccar can leave its schema migration locked when it is stopped
-    # halfway through one, which blocks every start after that.
-    host=$(bashio::services "mysql" "host")
-    password=$(bashio::services "mysql" "password")
-    port=$(bashio::services "mysql" "port")
-    username=$(bashio::services "mysql" "username")
-
-    echo "UPDATE DATABASECHANGELOGLOCK SET locked=0;" \
-        | mysql --skip-ssl -h "${host}" -P "${port}" -u "${username}" \
-            -p"${password}" traccar 2>/dev/null || true
-fi
 
 if xmlstarlet sel -Q -t -c "/properties/entry[@key='config.default']" \
     "${USER_CONFIG}" 2>/dev/null;

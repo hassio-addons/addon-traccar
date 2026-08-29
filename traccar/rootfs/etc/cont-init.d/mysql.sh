@@ -75,6 +75,13 @@ username=$(bashio::services "mysql" "username")
 echo "CREATE DATABASE IF NOT EXISTS traccar;" \
   | mysql --skip-ssl -h "${host}" -P "${port}" -u "${username}" -p"${password}"
 
+# Traccar can leave its schema migration locked when it is stopped halfway
+# through one, which blocks every start after that. On a database this app
+# does not manage itself, clearing that lock is up to the user.
+echo "UPDATE DATABASECHANGELOGLOCK SET locked=0;" \
+  | mysql --skip-ssl -h "${host}" -P "${port}" -u "${username}" -p"${password}" \
+      traccar 2>/dev/null || true
+
 # Update Traccar XML configuration for database. All four keys are shipped
 # in the defaults, so they are updated in place; inserting new elements makes
 # xmlstarlet parse the value as XML, which eats a "&" in, for example, a
