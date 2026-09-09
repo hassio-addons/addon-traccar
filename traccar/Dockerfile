@@ -12,7 +12,7 @@ COPY rootfs /
 WORKDIR /opt/traccar
 
 # Setup base
-ARG TRACCAR_VERSION="v6.15.2"
+ARG TRACCAR_VERSION="v6.15.3"
 RUN \
     apk add --no-cache \
         mariadb-client=11.8.8-r0 \
